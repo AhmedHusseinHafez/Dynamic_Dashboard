@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:espresso_dynamic_screen/src/app/gen_localization/l10n.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/constants.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/route_manager.dart';
@@ -26,6 +27,7 @@ class _MyAppState extends State<MyApp> {
 Widget _buildMaterialApp(RouteGenerator routeGenerator) {
   return MaterialApp(
     title: AppConstants.appName,
+    builder: DevicePreview.appBuilder,
     navigatorKey: navigatorKey,
     locale: const Locale('en', 'US'),
     localizationsDelegates: const [
@@ -38,7 +40,7 @@ Widget _buildMaterialApp(RouteGenerator routeGenerator) {
     debugShowCheckedModeBanner: false,
     theme: AppTheme.kLightTheme,
     onGenerateRoute: routeGenerator.getRoute,
-    // initialRoute: Routes.splashScreen,
+    initialRoute: Routes.dashboardScreen,
   );
   // return ScreenUtilInit(
   //   designSize: const Size(375, 812),

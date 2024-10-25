@@ -3,6 +3,7 @@ import 'package:espresso_dynamic_screen/src/core/resources/injection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:device_preview/device_preview.dart';
 
 import 'src/app/app.dart';
 
@@ -21,6 +22,11 @@ Future<void> main() async {
     if (kDebugMode) {
       Bloc.observer = AppObserver();
     }
-    runApp(MyApp());
+    runApp(
+      DevicePreview(
+        enabled: false,
+        builder: (context) => MyApp(),
+      ),
+    );
   });
 }

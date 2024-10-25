@@ -67,8 +67,10 @@ class FontSize {
   static double s40 = 40;
 
   static double s45 = 45;
+  static double s48 = 48;
 
   static double s50 = 50;
+  static double s57 = 57;
 
   static double s60 = 60;
 }
