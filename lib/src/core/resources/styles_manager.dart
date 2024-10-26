@@ -30,7 +30,7 @@ class StyleManager {
         letterSpacing: letterSpacing,
         fontSize ?? FontSize.s12,
         FontWeightManager.regular,
-        color ?? ColorManager.black,
+        color ?? ColorManager.darkCerulean,
         height);
   }
 
@@ -42,7 +42,7 @@ class StyleManager {
         letterSpacing: letterSpacing,
         fontSize ?? FontSize.s12,
         FontWeightManager.medium,
-        color ?? ColorManager.black,
+        color ?? ColorManager.darkCerulean,
         height);
   }
 
@@ -51,7 +51,7 @@ class StyleManager {
   static TextStyle getLightStyle(
       {double? fontSize, Color? color, double? height, double? letterSpacing}) {
     return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.light,
-        color ?? ColorManager.black, height,
+        color ?? ColorManager.darkCerulean, height,
         letterSpacing: letterSpacing);
   }
 
@@ -60,7 +60,7 @@ class StyleManager {
   static TextStyle getBoldStyle(
       {double? fontSize, Color? color, double? height}) {
     return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.bold,
-        color ?? ColorManager.black, height);
+        color ?? ColorManager.darkCerulean, height);
   }
 
 // semibold style
@@ -68,7 +68,7 @@ class StyleManager {
   static TextStyle getSemiBoldStyle(
       {double? fontSize, Color? color, double? height}) {
     return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.semiBold,
-        color ?? ColorManager.black, height);
+        color ?? ColorManager.darkCerulean, height);
   }
 }
 

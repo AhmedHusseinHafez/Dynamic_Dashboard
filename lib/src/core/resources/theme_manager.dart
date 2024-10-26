@@ -10,7 +10,6 @@ mixin AppTheme implements ThemeData {
 
         //! Scaffold Color
         scaffoldBackgroundColor: ColorManager.lightGray,
-
         primaryColor: ColorManager.primary,
         //       // primaryColorLight: ,
         //       // primaryColorDark: ,
@@ -129,29 +128,28 @@ mixin AppTheme implements ThemeData {
         //         ),
         //       ),
 
-        //       listTileTheme: ListTileThemeData(
-        //         tileColor: ColorManager.jetBlack,
-        //         // textColor: ColorManager.white,
-        //         contentPadding: EdgeInsets.symmetric(
-        //           vertical: 4.5.h,
-        //           horizontal: 9.w,
-        //         ),
-        //         visualDensity:
-        //             const VisualDensity(vertical: VisualDensity.maximumDensity),
-        //         // VisualDensity.comfortable,
-        //         shape: RoundedRectangleBorder(
-        //           borderRadius: BorderRadius.circular(10.r),
-        //         ),
-        //         titleTextStyle: StyleManager.getLightStyle(
-        //           fontSize: FontSize.s13,
-        //           color: ColorManager.white,
-        //         ),
-        //         subtitleTextStyle: StyleManager.getLightStyle(
-        //           fontSize: FontSize.s10,
-        //           color: ColorManager.dimGray,
-        //         ),
-        //         horizontalTitleGap: 21.w,
-        //       ),
+        listTileTheme: ListTileThemeData(
+          tileColor: ColorManager.whiteSmoke,
+          // textColor: ColorManager.white,
+          // contentPadding: EdgeInsets.symmetric(
+          //   vertical: 4.5.h,
+          //   horizontal: 9.w,
+          // ),
+          // visualDensity:
+          //     const VisualDensity(vertical: VisualDensity.maximumDensity),
+          // VisualDensity.comfortable,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          titleTextStyle: StyleManager.getSemiBoldStyle(
+            fontSize: FontSize.s16,
+          ),
+          subtitleTextStyle: StyleManager.getRegularStyle(
+            fontSize: FontSize.s12,
+            color: ColorManager.gray,
+          ),
+          // horizontalTitleGap: 21.w,
+        ),
 
         //       //! search bar
         //       searchBarTheme: SearchBarThemeData(
@@ -221,7 +219,9 @@ mixin AppTheme implements ThemeData {
         //       //           ),
         //       //         ),
         //       //       ),
-        //       //drawerTheme:
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: ColorManager.white,
+        ),
         //     );
 
         // static TextStyle _getTFFFontStyle({bool? error}) {

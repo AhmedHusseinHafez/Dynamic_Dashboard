@@ -9,4 +9,11 @@ class StringsManager {
   static final getWord = MyLocalization.current;
 
   // static String noRoute = getWord.NoRouteFound;
+  static String dashboard = "Dashboard";
+  static String myTransaction = "My Transaction";
+  static String statistics = "Statistics";
+  static String myInvestments = "My Investments";
+  static String walletAccount = "Wallet Account";
+  static String settingSystem = "Setting system";
+  static String logoutAccount = "Logout account";
 }
