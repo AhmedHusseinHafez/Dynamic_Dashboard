@@ -14,6 +14,7 @@ class AssetsManager {
   static const String imagesMyCard = "$imagePath/my_card.png";
 
   static const String svgAvatar1 = "$svgPath/avatar_1.svg";
+  static const String svgArrowDown = "$svgPath/arrow_down.svg";
 
   static const String svgAvatar2 = "$svgPath/avatar_2.svg";
 

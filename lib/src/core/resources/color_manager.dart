@@ -11,6 +11,7 @@ class ColorManager {
   static const Color white = Color(0xffFFFFFF);
 
   static const Color lightGray = Color(0xffF7F9FA);
+  static const Color borderGray = Color(0xffF1F1F1);
 
   static const Color cyanBlueAzure = Color(0xff208CC8);
 

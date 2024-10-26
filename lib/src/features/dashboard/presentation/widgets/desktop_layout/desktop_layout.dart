@@ -1,4 +1,5 @@
 import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
+import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/all_expenses.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/custom_drawer.dart';
 
 import 'package:flutter/material.dart';
@@ -15,10 +16,12 @@ class DashboardDesktopLayout extends StatelessWidget {
             child: CustomDrawer(),
           ),
           const SizedBox(width: 32),
-          Expanded(
+          const Expanded(
             flex: 3,
-            child: Container(
-              color: ColorManager.coral,
+            child: Column(
+              children: [
+                AllExpenses(),
+              ],
             ),
           ),
           const SizedBox(width: 24),
