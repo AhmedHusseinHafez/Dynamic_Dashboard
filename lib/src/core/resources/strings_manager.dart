@@ -19,11 +19,19 @@ class StringsManager {
 
   static String allExpenses = "All Expenses";
   static String myCard = "My card";
+  static String transactionHistory = "Transaction History";
   static String monthly = "Monthly";
+  static String designService = "Design service";
+  static String designProduct = "Design product";
+  static String income = "Income";
+  static String other = "Other";
+  static String productRoyalti = "Product royalti";
+  static String cashWithdrawal = "Cash Withdrawal";
+  static String landingPageproject = "Landing Page project";
+  static String juniMobileAppproject = "Juni Mobile App project";
+  static String seeAll = "See all";
 
   static String balance = "Balance";
-
-  static String income = "Income";
 
   static String expenses = "Expenses";
 

@@ -103,17 +103,17 @@ mixin AppTheme implements ThemeData {
           // suffixIconColor: ColorManager.secondary,
         ),
 
-        //       textButtonTheme: TextButtonThemeData(
-        //         style: ButtonStyle(
-        //           backgroundColor:
-        //               const MaterialStatePropertyAll<Color>(ColorManager.transparent),
-        //           foregroundColor:
-        //               const MaterialStatePropertyAll<Color>(ColorManager.secondary),
-        //           textStyle: MaterialStatePropertyAll<TextStyle>(
-        //             StyleManager.getRegularStyle(fontSize: FontSize.s14),
-        //           ),
-        //         ),
-        //       ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor:
+                const WidgetStatePropertyAll<Color>(ColorManager.white),
+            foregroundColor:
+                const WidgetStatePropertyAll<Color>(ColorManager.primary),
+            textStyle: WidgetStatePropertyAll<TextStyle>(
+              StyleManager.getLightStyle(fontSize: FontSize.s16),
+            ),
+          ),
+        ),
 
         //       iconButtonTheme: IconButtonThemeData(
         //         style: ButtonStyle(
