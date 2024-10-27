@@ -18,6 +18,7 @@ class StringsManager {
   static String logoutAccount = "Logout account";
 
   static String allExpenses = "All Expenses";
+  static String myCard = "My card";
   static String monthly = "Monthly";
 
   static String balance = "Balance";
