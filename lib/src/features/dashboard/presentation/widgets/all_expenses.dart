@@ -1,7 +1,7 @@
-import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/data/models/all_expenses_model.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/all_expenses_header.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/all_expenses_item.dart';
+import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/background_container.dart';
 
 import 'package:flutter/material.dart';
 
@@ -51,27 +51,6 @@ class _AllExpensesState extends State<AllExpenses> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class BackGroundContainer extends StatelessWidget {
-  const BackGroundContainer({
-    super.key,
-    this.child,
-  });
-
-  final Widget? child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: ColorManager.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: child,
     );
   }
 }

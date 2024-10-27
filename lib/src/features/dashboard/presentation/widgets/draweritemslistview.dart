@@ -23,7 +23,7 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
       child: ListView.separated(
         itemCount: CustomListTileModel.getDrawerItemsList().length,
         separatorBuilder: (BuildContext context, int index) {
-          double minHeight = index == 4 ? max(height - 610, 0) : 0;
+          double minHeight = index == 4 ? max(height - 660, 0) : 0;
           return ConstrainedBox(
             constraints: BoxConstraints(minHeight: minHeight),
           );

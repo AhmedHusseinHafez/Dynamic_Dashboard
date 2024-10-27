@@ -44,4 +44,24 @@ class CustomListTileModel {
       ),
     ];
   }
+
+  static List<CustomListTileModel> getQuickInvoiceItemsList() {
+    return <CustomListTileModel>[
+      CustomListTileModel(
+        title: "Madrani Andi",
+        subtitle: "Madraniadi20@gmail",
+        image: AssetsManager.svgAvatar1,
+      ),
+      CustomListTileModel(
+        title: "Josua Nunito",
+        subtitle: "Josh Nunito@gmail.com",
+        image: AssetsManager.svgAvatar2,
+      ),
+      CustomListTileModel(
+        title: "Madrani Andi",
+        subtitle: "Madraniadi20@gmail",
+        image: AssetsManager.svgAvatar1,
+      ),
+    ];
+  }
 }

@@ -6,18 +6,30 @@ class CustomListTile extends StatelessWidget {
   const CustomListTile({
     super.key,
     required this.model,
+    this.borderRadius,
   });
 
   final CustomListTileModel model;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: SvgPicture.asset(
-        model.image,
+    // i use card because tileColor visible in drawer and not visible in QuickInvoice
+    // for reason i don't no it, the card solve this issue
+    return Card(
+      elevation: 0,
+      child: Center(
+        child: ListTile(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius ?? 12)),
+          ),
+          leading: SvgPicture.asset(
+            model.image,
+          ),
+          title: Text(model.title),
+          subtitle: model.subtitle != null ? Text(model.subtitle!) : null,
+        ),
       ),
-      title: Text(model.title),
-      subtitle: model.subtitle != null ? Text(model.subtitle!) : null,
     );
   }
 }

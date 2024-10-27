@@ -16,13 +16,11 @@ mixin AppTheme implements ThemeData {
         //       // disabledColor: ColorManager.whiteWithOpacity30,
         //       // splashColor: ,  //ripple effect
 
-        //       //!Divider
-        //       dividerTheme: DividerThemeData(
-        //         color: ColorManager.charcoal,
-        //         indent: 6.w,
-        //         endIndent: 6.w,
-        //         thickness: 2,
-        //       ),
+        //!Divider
+        dividerTheme: const DividerThemeData(
+          color: ColorManager.borderGray,
+          thickness: 1,
+        ),
 
         //       //!App bar
         //       appBarTheme: AppBarTheme(
@@ -58,17 +56,19 @@ mixin AppTheme implements ThemeData {
         //         },
         //       ),
 
-        //       // //!ElevatedButtonTheme
-        //       elevatedButtonTheme: ElevatedButtonThemeData(
-        //         style: ElevatedButton.styleFrom(
-        //           fixedSize: Size(327.w, 46.h),
-        //           shape: const StadiumBorder(),
-        //           backgroundColor: ColorManager.secondary,
-        //           foregroundColor: ColorManager.white,
-        //           textStyle: StyleManager.getMediumStyle(fontSize: FontSize.s12),
-        //           surfaceTintColor: ColorManager.primary,
-        //         ),
-        //       ),
+        //!ElevatedButtonTheme
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            elevation: 0,
+            fixedSize: const Size(266, 62),
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12))),
+            backgroundColor: ColorManager.primary,
+            foregroundColor: ColorManager.white,
+            textStyle: StyleManager.getRegularStyle(fontSize: FontSize.s18),
+            surfaceTintColor: ColorManager.white,
+          ),
+        ),
 
         fontFamily: FontConstants.defaultFontFamily,
 
@@ -81,30 +81,27 @@ mixin AppTheme implements ThemeData {
         //         selectionHandleColor: ColorManager.secondary,
         //       ),
 
-        //       //! TFF Theme
-        //       inputDecorationTheme: InputDecorationTheme(
-        //         contentPadding: EdgeInsets.symmetric(
-        //           horizontal: AppPadding.p16.w,
-        //           vertical: AppPadding.p16.h,
-        //         ),
+        //! TFF Theme
+        inputDecorationTheme: InputDecorationTheme(
+          contentPadding: const EdgeInsets.all(20),
 
-        //         filled: true,
-        //         fillColor: ColorManager.jetBlack,
+          filled: true,
+          fillColor: ColorManager.whiteSmoke,
 
-        //         hintStyle: _getTFFFontStyle(),
-        //         labelStyle: _getTFFFontStyle(),
-        //         errorStyle: _getTFFFontStyle(error: true),
-        //         //enabledBorder the border before click on field
-        //         enabledBorder: _getTFFBorderStyle(),
-        //         //focusedBorder the border after click on field
-        //         focusedBorder: _getTFFBorderStyle(color: ColorManager.secondary),
-        //         errorBorder: _getTFFBorderStyle(color: ColorManager.brightRed),
-        //         focusedErrorBorder: _getTFFBorderStyle(),
-        //         // disabledBorder: _getTFFBorderStyle(),
-        //         border: _getTFFBorderStyle(),
-        //         // iconColor: ColorManager.secondary,
-        //         // suffixIconColor: ColorManager.secondary,
-        //       ),
+          hintStyle: _getTFFFontStyle(),
+          labelStyle: _getTFFFontStyle(),
+          errorStyle: _getTFFFontStyle(error: true),
+          //enabledBorder the border before click on field
+          enabledBorder: _getTFFBorderStyle(),
+          //focusedBorder the border after click on field
+          focusedBorder: _getTFFBorderStyle(color: ColorManager.primary),
+          errorBorder: _getTFFBorderStyle(color: ColorManager.coral),
+          focusedErrorBorder: _getTFFBorderStyle(),
+          // disabledBorder: _getTFFBorderStyle(),
+          border: _getTFFBorderStyle(),
+          // iconColor: ColorManager.secondary,
+          // suffixIconColor: ColorManager.secondary,
+        ),
 
         //       textButtonTheme: TextButtonThemeData(
         //         style: ButtonStyle(
@@ -223,31 +220,28 @@ mixin AppTheme implements ThemeData {
           backgroundColor: ColorManager.white,
         ),
         //     );
-
-        // static TextStyle _getTFFFontStyle({bool? error}) {
-        //   return error ?? false
-        //       ? StyleManager.getRegularStyle(
-        //           color: ColorManager.brightRed,
-        //           fontSize: FontSize.s13,
-        //         )
-        //       : StyleManager.getRegularStyle(
-        //           color: ColorManager.whiteWithOpacity30,
-        //           fontSize: FontSize.s13,
-        //         );
-        // }
-
-        // static InputBorder _getTFFBorderStyle({Color? color}) {
-        //   return OutlineInputBorder(
-        //     borderSide: BorderSide(
-        //       color: color ?? ColorManager.deepCharcoal,
-        //       width: 1.w,
-        //     ),
-        //     borderRadius: BorderRadius.circular(
-        //       100.r,
-        //     ),
-        //   );
-        // }
       );
+  static TextStyle _getTFFFontStyle({bool? error}) {
+    return error ?? false
+        ? StyleManager.getLightStyle(
+            color: ColorManager.coral,
+            fontSize: FontSize.s16,
+          )
+        : StyleManager.getLightStyle(
+            color: ColorManager.gray,
+            fontSize: FontSize.s16,
+          );
+  }
+
+  static InputBorder _getTFFBorderStyle({Color? color}) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: color ?? ColorManager.whiteSmoke,
+      ),
+      borderRadius: BorderRadius.circular(12),
+    );
+  }
+
   static TextTheme _myTextTheme() {
     return TextTheme(
       //!Label
