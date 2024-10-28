@@ -1,3 +1,4 @@
+import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/font_manager.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +60,7 @@ class _DefaultTextFieldWidgetState extends State<DefaultTextFieldWidget> {
       children: [
         Text(
           widget.title,
-          style: StyleManager.getRegularStyle(fontSize: FontSize.s16),
+          style: StyleManager.getRegularStyle(context, fontSize: FontSize.s16),
         ),
         const SizedBox(height: 12),
         TextFormField(
@@ -84,6 +85,9 @@ class _DefaultTextFieldWidgetState extends State<DefaultTextFieldWidget> {
           //     ? [FilteringTextInputFormatter.allow(RegExp('[0-9+]'))]
           //     : [],
           decoration: InputDecoration(
+            hintStyle: _getTFFFontStyle(context),
+            labelStyle: _getTFFFontStyle(context),
+            errorStyle: _getTFFFontStyle(context, error: true),
             // enabledBorder: _getTFFBorderStyle(),
             // focusedBorder: _getTFFBorderStyle(color: ColorManager.secondary),
             // errorBorder: _getTFFBorderStyle(color: ColorManager.brightRed),
@@ -97,19 +101,17 @@ class _DefaultTextFieldWidgetState extends State<DefaultTextFieldWidget> {
     );
   }
 
-  // OutlineInputBorder? _getTFFBorderStyle({Color? color}) {
-  //   if (widget.maxLines != null && widget.maxLines! > 1) {
-  //     return OutlineInputBorder(
-  //       borderSide: BorderSide(
-  //         color: color ?? ColorManager.deepCharcoal,
-  //         width: 1.w,
-  //       ),
-  //       borderRadius: BorderRadius.circular(
-  //         20.r,
-  //       ),
-  //     );
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  static TextStyle _getTFFFontStyle(BuildContext context, {bool? error}) {
+    return error ?? false
+        ? StyleManager.getLightStyle(
+            context,
+            color: ColorManager.coral,
+            fontSize: FontSize.s16,
+          )
+        : StyleManager.getLightStyle(
+            context,
+            color: ColorManager.gray,
+            fontSize: FontSize.s16,
+          );
+  }
 }

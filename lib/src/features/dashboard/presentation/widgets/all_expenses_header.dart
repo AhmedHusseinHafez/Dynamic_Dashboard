@@ -17,6 +17,7 @@ class AllExpensesHeader extends StatelessWidget {
       Text(
         StringsManager.allExpenses,
         style: StyleManager.getMediumStyle(
+          context,
           fontSize: FontSize.s20,
         ),
       ),
@@ -34,6 +35,7 @@ class AllExpensesHeader extends StatelessWidget {
           Text(
             StringsManager.monthly,
             style: StyleManager.getMediumStyle(
+              context,
               fontSize: FontSize.s16,
             ),
           ),

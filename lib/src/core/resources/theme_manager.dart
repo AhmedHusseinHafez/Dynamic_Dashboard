@@ -1,6 +1,5 @@
 import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/font_manager.dart';
-import 'package:espresso_dynamic_screen/src/core/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 mixin AppTheme implements ThemeData {
@@ -65,7 +64,7 @@ mixin AppTheme implements ThemeData {
                 borderRadius: BorderRadius.all(Radius.circular(12))),
             backgroundColor: ColorManager.primary,
             foregroundColor: ColorManager.white,
-            textStyle: StyleManager.getRegularStyle(fontSize: FontSize.s18),
+            // textStyle: StyleManager.getRegularStyle(fontSize: FontSize.s18),
             surfaceTintColor: ColorManager.white,
           ),
         ),
@@ -73,7 +72,7 @@ mixin AppTheme implements ThemeData {
         fontFamily: FontConstants.defaultFontFamily,
 
         //!TextTheme
-        textTheme: _myTextTheme(),
+        // textTheme: _myTextTheme(),
 
         //       textSelectionTheme: const TextSelectionThemeData(
         //         cursorColor: ColorManager.secondary,
@@ -88,9 +87,9 @@ mixin AppTheme implements ThemeData {
           filled: true,
           fillColor: ColorManager.whiteSmoke,
 
-          hintStyle: _getTFFFontStyle(),
-          labelStyle: _getTFFFontStyle(),
-          errorStyle: _getTFFFontStyle(error: true),
+          // hintStyle: _getTFFFontStyle(),
+          // labelStyle: _getTFFFontStyle(),
+          // errorStyle: _getTFFFontStyle(error: true),
           //enabledBorder the border before click on field
           enabledBorder: _getTFFBorderStyle(),
           //focusedBorder the border after click on field
@@ -103,15 +102,14 @@ mixin AppTheme implements ThemeData {
           // suffixIconColor: ColorManager.secondary,
         ),
 
-        textButtonTheme: TextButtonThemeData(
+        textButtonTheme: const TextButtonThemeData(
           style: ButtonStyle(
-            backgroundColor:
-                const WidgetStatePropertyAll<Color>(ColorManager.white),
+            backgroundColor: WidgetStatePropertyAll<Color>(ColorManager.white),
             foregroundColor:
-                const WidgetStatePropertyAll<Color>(ColorManager.primary),
-            textStyle: WidgetStatePropertyAll<TextStyle>(
-              StyleManager.getLightStyle(fontSize: FontSize.s16),
-            ),
+                WidgetStatePropertyAll<Color>(ColorManager.primary),
+            // textStyle: WidgetStatePropertyAll<TextStyle>(
+            //   StyleManager.getLightStyle(fontSize: FontSize.s16),
+            // ),
           ),
         ),
 
@@ -138,13 +136,13 @@ mixin AppTheme implements ThemeData {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          titleTextStyle: StyleManager.getSemiBoldStyle(
-            fontSize: FontSize.s16,
-          ),
-          subtitleTextStyle: StyleManager.getRegularStyle(
-            fontSize: FontSize.s12,
-            color: ColorManager.gray,
-          ),
+          // titleTextStyle: StyleManager.getSemiBoldStyle(
+          //   fontSize: FontSize.s16,
+          // ),
+          // subtitleTextStyle: StyleManager.getRegularStyle(
+          //   fontSize: FontSize.s12,
+          //   color: ColorManager.gray,
+          // ),
           // horizontalTitleGap: 21.w,
         ),
 
@@ -221,17 +219,17 @@ mixin AppTheme implements ThemeData {
         ),
         //     );
       );
-  static TextStyle _getTFFFontStyle({bool? error}) {
-    return error ?? false
-        ? StyleManager.getLightStyle(
-            color: ColorManager.coral,
-            fontSize: FontSize.s16,
-          )
-        : StyleManager.getLightStyle(
-            color: ColorManager.gray,
-            fontSize: FontSize.s16,
-          );
-  }
+  // static TextStyle _getTFFFontStyle({bool? error}) {
+  //   return error ?? false
+  //       ? StyleManager.getLightStyle(
+  //           color: ColorManager.coral,
+  //           fontSize: FontSize.s16,
+  //         )
+  //       : StyleManager.getLightStyle(
+  //           color: ColorManager.gray,
+  //           fontSize: FontSize.s16,
+  //         );
+  // }
 
   static InputBorder _getTFFBorderStyle({Color? color}) {
     return OutlineInputBorder(
@@ -242,53 +240,53 @@ mixin AppTheme implements ThemeData {
     );
   }
 
-  static TextTheme _myTextTheme() {
-    return TextTheme(
-      //!Label
-      labelLarge: StyleManager.getBoldStyle(fontSize: FontSize.s20),
-      labelMedium: StyleManager.getMediumStyle(fontSize: FontSize.s16),
-      labelSmall: StyleManager.getRegularStyle(fontSize: FontSize.s12),
+  // static TextTheme _myTextTheme() {
+  //   return TextTheme(
+  //     //!Label
+  //     labelLarge: StyleManager.getBoldStyle(fontSize: FontSize.s20),
+  //     labelMedium: StyleManager.getMediumStyle(fontSize: FontSize.s16),
+  //     labelSmall: StyleManager.getRegularStyle(fontSize: FontSize.s12),
 
-      //!Body
-      bodyLarge: StyleManager.getRegularStyle(fontSize: FontSize.s16),
-      bodyMedium: StyleManager.getRegularStyle(fontSize: FontSize.s14),
-      bodySmall: StyleManager.getRegularStyle(fontSize: FontSize.s12),
+  //     //!Body
+  //     bodyLarge: StyleManager.getRegularStyle(fontSize: FontSize.s16),
+  //     bodyMedium: StyleManager.getRegularStyle(fontSize: FontSize.s14),
+  //     bodySmall: StyleManager.getRegularStyle(fontSize: FontSize.s12),
 
-      //! Display
-      displayLarge: StyleManager.getLightStyle(
-        fontSize: FontSize.s57,
-        letterSpacing: -1.5,
-      ),
-      displayMedium: StyleManager.getRegularStyle(
-        fontSize: FontSize.s45,
-        letterSpacing: -0.5,
-      ),
-      displaySmall: StyleManager.getRegularStyle(fontSize: FontSize.s36),
+  //     //! Display
+  //     displayLarge: StyleManager.getLightStyle(
+  //       fontSize: FontSize.s57,
+  //       letterSpacing: -1.5,
+  //     ),
+  //     displayMedium: StyleManager.getRegularStyle(
+  //       fontSize: FontSize.s45,
+  //       letterSpacing: -0.5,
+  //     ),
+  //     displaySmall: StyleManager.getRegularStyle(fontSize: FontSize.s36),
 
-      //!Title
-      titleLarge: StyleManager.getRegularStyle(
-        fontSize: FontSize.s22,
-        letterSpacing: -0.5,
-      ),
-      titleMedium: StyleManager.getMediumStyle(
-        fontSize: FontSize.s16,
-        letterSpacing: 0.15,
-      ),
-      titleSmall: StyleManager.getMediumStyle(
-        fontSize: FontSize.s14,
-        letterSpacing: 0.1,
-      ),
+  //     //!Title
+  //     titleLarge: StyleManager.getRegularStyle(
+  //       fontSize: FontSize.s22,
+  //       letterSpacing: -0.5,
+  //     ),
+  //     titleMedium: StyleManager.getMediumStyle(
+  //       fontSize: FontSize.s16,
+  //       letterSpacing: 0.15,
+  //     ),
+  //     titleSmall: StyleManager.getMediumStyle(
+  //       fontSize: FontSize.s14,
+  //       letterSpacing: 0.1,
+  //     ),
 
-      //!Headline
-      headlineLarge: StyleManager.getRegularStyle(
-        fontSize: FontSize.s60,
-        letterSpacing: -2.0,
-      ),
-      headlineMedium: StyleManager.getRegularStyle(
-        fontSize: FontSize.s48,
-        letterSpacing: -0.5,
-      ),
-      headlineSmall: StyleManager.getRegularStyle(fontSize: FontSize.s36),
-    );
-  }
+  //     //!Headline
+  //     headlineLarge: StyleManager.getRegularStyle(
+  //       fontSize: FontSize.s60,
+  //       letterSpacing: -2.0,
+  //     ),
+  //     headlineMedium: StyleManager.getRegularStyle(
+  //       fontSize: FontSize.s48,
+  //       letterSpacing: -0.5,
+  //     ),
+  //     headlineSmall: StyleManager.getRegularStyle(fontSize: FontSize.s36),
+  //   );
+  // }
 }

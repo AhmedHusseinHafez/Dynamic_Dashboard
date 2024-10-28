@@ -26,8 +26,16 @@ class CustomListTile extends StatelessWidget {
           leading: SvgPicture.asset(
             model.image,
           ),
-          title: Text(model.title),
-          subtitle: model.subtitle != null ? Text(model.subtitle!) : null,
+          title: FittedBox(
+              alignment: AlignmentDirectional.centerStart,
+              fit: BoxFit.scaleDown,
+              child: Text(model.title)),
+          subtitle: model.subtitle != null
+              ? FittedBox(
+                  alignment: AlignmentDirectional.centerStart,
+                  fit: BoxFit.scaleDown,
+                  child: Text(model.subtitle!))
+              : null,
         ),
       ),
     );

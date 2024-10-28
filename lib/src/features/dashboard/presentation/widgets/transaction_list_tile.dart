@@ -20,9 +20,11 @@ class TransactionListTile extends StatelessWidget {
       child: ListTile(
         visualDensity: VisualDensity.standard,
         titleTextStyle: StyleManager.getMediumStyle(
+          context,
           fontSize: FontSize.s16,
         ),
         subtitleTextStyle: StyleManager.getLightStyle(
+          context,
           fontSize: FontSize.s14,
           color: ColorManager.gray,
         ),
@@ -30,6 +32,7 @@ class TransactionListTile extends StatelessWidget {
         subtitle: Text(model.date),
         trailing: Text(model.amount,
             style: StyleManager.getMediumStyle(
+              context,
               fontSize: FontSize.s20,
               color: (model.title == StringsManager.cashWithdrawal)
                   ? ColorManager.coral

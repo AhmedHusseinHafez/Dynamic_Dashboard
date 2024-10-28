@@ -1,5 +1,7 @@
 import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
+import 'package:espresso_dynamic_screen/src/core/resources/font_manager.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/strings_manager.dart';
+import 'package:espresso_dynamic_screen/src/core/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
@@ -20,7 +22,11 @@ class Buttons extends StatelessWidget {
                 ),
               ),
           onPressed: () {},
-          child: Text(StringsManager.addMoreDetails),
+          child: Text(
+            StringsManager.addMoreDetails,
+            style:
+                StyleManager.getRegularStyle(context, fontSize: FontSize.s18),
+          ),
         ),
       ),
       const SizedBox(width: 24),

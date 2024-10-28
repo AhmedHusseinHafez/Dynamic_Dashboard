@@ -1,4 +1,5 @@
 import 'package:espresso_dynamic_screen/src/core/resources/color_manager.dart';
+import 'package:espresso_dynamic_screen/src/core/resources/size_config.dart';
 import 'package:espresso_dynamic_screen/src/core/resources/strings_manager.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/background_container.dart';
 import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/widgets/detailed_income_chart.dart';
@@ -11,22 +12,26 @@ class InComeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return BackGroundContainer(
       child: Column(
         children: [
           const IncomeHeader(),
-          const SizedBox(height: 28),
-          Row(
-            children: [
-              const Expanded(
-                child: DetailedIncomeChart(),
-              ),
-              const SizedBox(width: 50),
-              Expanded(
-                child: _categories(),
-              )
-            ],
-          )
+          const SizedBox(height: 24),
+          width >= SizeConfig.desktop && width < 1860
+              ? const DetailedIncomeChart()
+              : Row(
+                  children: [
+                    const Expanded(
+                      child: DetailedIncomeChart(),
+                    ),
+                    const SizedBox(width: 48),
+                    Expanded(
+                      child: _categories(),
+                    )
+                  ],
+                ),
         ],
       ),
     );

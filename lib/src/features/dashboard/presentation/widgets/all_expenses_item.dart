@@ -42,6 +42,7 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             model.title,
             style: StyleManager.getRegularStyle(
+              context,
               color: isSelected ? ColorManager.white : null,
               fontSize: FontSize.s16,
             ),
@@ -50,6 +51,7 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             model.date,
             style: StyleManager.getLightStyle(
+              context,
               color: isSelected ? ColorManager.whiteSmoke : ColorManager.gray,
               fontSize: FontSize.s14,
             ),
@@ -58,6 +60,7 @@ class AllExpensesItem extends StatelessWidget {
           Text(
             model.price,
             style: StyleManager.getMediumStyle(
+              context,
               color: isSelected ? ColorManager.white : ColorManager.primary,
               fontSize: FontSize.s24,
             ),

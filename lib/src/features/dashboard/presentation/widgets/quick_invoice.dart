@@ -23,7 +23,8 @@ class QuickInvoice extends StatelessWidget {
           const SizedBox(height: 24),
           Text(
             StringsManager.latestTransaction,
-            style: StyleManager.getRegularStyle(fontSize: FontSize.s16),
+            style:
+                StyleManager.getRegularStyle(context, fontSize: FontSize.s16),
           ),
           const SizedBox(height: 12),
           _buildListView(scrollController),

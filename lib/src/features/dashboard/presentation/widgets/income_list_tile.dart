@@ -32,11 +32,13 @@ class IncomeListTile extends StatelessWidget {
         ),
         title: Text(text),
         titleTextStyle: StyleManager.getLightStyle(
-          fontSize: FontSize.s16,
+          context,
+          fontSize: FontSize.s15,
         ),
         trailing: Text(
           "$percentage%",
           style: StyleManager.getLightStyle(
+            context,
             fontSize: FontSize.s16,
             color: ColorManager.cyanBlueAzure,
           ),

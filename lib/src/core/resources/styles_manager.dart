@@ -10,10 +10,15 @@ class StyleManager {
   factory StyleManager() => _instance;
 
   static TextStyle _getTextStyle(
-      double fontSize, FontWeight fontWeight, Color color, double? height,
-      {double? letterSpacing}) {
+    BuildContext context,
+    double fontSize,
+    FontWeight fontWeight,
+    Color color,
+    double? height, {
+    double? letterSpacing,
+  }) {
     return TextStyle(
-      fontSize: fontSize,
+      fontSize: getResponsiveFontSize(context, fontSize: fontSize),
       fontFamily: FontConstants.defaultFontFamily,
       color: color,
       fontWeight: fontWeight,
@@ -25,8 +30,14 @@ class StyleManager {
 // regular style
 
   static TextStyle getRegularStyle(
-      {double? fontSize, Color? color, double? height, double? letterSpacing}) {
+    BuildContext context, {
+    double? fontSize,
+    Color? color,
+    double? height,
+    double? letterSpacing,
+  }) {
     return _getTextStyle(
+        context,
         letterSpacing: letterSpacing,
         fontSize ?? FontSize.s12,
         FontWeightManager.regular,
@@ -36,9 +47,10 @@ class StyleManager {
 
 // medium style
 
-  static TextStyle getMediumStyle(
+  static TextStyle getMediumStyle(BuildContext context,
       {double? fontSize, Color? color, double? height, double? letterSpacing}) {
     return _getTextStyle(
+        context,
         letterSpacing: letterSpacing,
         fontSize ?? FontSize.s12,
         FontWeightManager.medium,
@@ -48,27 +60,27 @@ class StyleManager {
 
 // light style
 
-  static TextStyle getLightStyle(
+  static TextStyle getLightStyle(BuildContext context,
       {double? fontSize, Color? color, double? height, double? letterSpacing}) {
-    return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.light,
-        color ?? ColorManager.darkCerulean, height,
+    return _getTextStyle(context, fontSize ?? FontSize.s12,
+        FontWeightManager.light, color ?? ColorManager.darkCerulean, height,
         letterSpacing: letterSpacing);
   }
 
 // bold style
 
-  static TextStyle getBoldStyle(
+  static TextStyle getBoldStyle(BuildContext context,
       {double? fontSize, Color? color, double? height}) {
-    return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.bold,
-        color ?? ColorManager.darkCerulean, height);
+    return _getTextStyle(context, fontSize ?? FontSize.s12,
+        FontWeightManager.bold, color ?? ColorManager.darkCerulean, height);
   }
 
 // semibold style
 
-  static TextStyle getSemiBoldStyle(
+  static TextStyle getSemiBoldStyle(BuildContext context,
       {double? fontSize, Color? color, double? height}) {
-    return _getTextStyle(fontSize ?? FontSize.s12, FontWeightManager.semiBold,
-        color ?? ColorManager.darkCerulean, height);
+    return _getTextStyle(context, fontSize ?? FontSize.s12,
+        FontWeightManager.semiBold, color ?? ColorManager.darkCerulean, height);
   }
 }
 

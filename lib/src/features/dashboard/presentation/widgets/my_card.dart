@@ -31,32 +31,32 @@ class MyCard extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.only(
-            start: 31,
-            end: 24,
-            top: 20,
-            bottom: 27,
-          ),
+          padding: const EdgeInsetsDirectional.only(end: 18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              _cardListTile(),
+              const Flexible(
+                child: SizedBox(height: 30),
+              ),
+              _cardListTile(context),
               const Spacer(),
               Text(
                 "0918 8124 0042 8129",
                 style: StyleManager.getRegularStyle(
+                  context,
                   fontSize: FontSize.s24,
                   color: ColorManager.white,
                 ),
               ),
-              const SizedBox(height: 12),
+              // const SizedBox(height: 12),
               Text(
                 "12/20 - 124",
                 style: StyleManager.getLightStyle(
+                  context,
                   fontSize: FontSize.s16,
                   color: ColorManager.white,
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -64,23 +64,22 @@ class MyCard extends StatelessWidget {
     );
   }
 
-  Widget _cardListTile() {
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(start: 0, end: 45 - 24),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        titleTextStyle: StyleManager.getLightStyle(
-          fontSize: FontSize.s16,
-          color: ColorManager.white,
-        ),
-        subtitleTextStyle: StyleManager.getRegularStyle(
-          fontSize: FontSize.s20,
-          color: ColorManager.white,
-        ),
-        title: Text(title),
-        subtitle: const Text("Syah Bandi"),
-        trailing: SvgPicture.asset(AssetsManager.svgGallery),
+  Widget _cardListTile(BuildContext context) {
+    return ListTile(
+      // contentPadding: EdgeInsets.zero,
+      titleTextStyle: StyleManager.getLightStyle(
+        context,
+        fontSize: FontSize.s16,
+        color: ColorManager.white,
       ),
+      subtitleTextStyle: StyleManager.getRegularStyle(
+        context,
+        fontSize: FontSize.s20,
+        color: ColorManager.white,
+      ),
+      title: Text(title),
+      subtitle: const Text("Syah Bandi"),
+      trailing: SvgPicture.asset(AssetsManager.svgGallery),
     );
   }
 }

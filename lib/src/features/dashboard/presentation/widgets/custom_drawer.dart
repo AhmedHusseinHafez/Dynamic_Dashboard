@@ -11,15 +11,12 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(children: [
-        const SizedBox(height: 50),
-        Padding(
-          padding: const EdgeInsetsDirectional.only(start: 28, end: 20),
-          child: CustomListTile(
-            model: CustomListTileModel(
-              title: 'Lekan Okeowo',
-              subtitle: 'demo@gmail.com',
-              image: AssetsManager.svgAvatar3,
-            ),
+        // const SizedBox(height: 50),
+        CustomListTile(
+          model: CustomListTileModel(
+            title: 'Lekan Okeowo',
+            subtitle: 'demo@gmail.com',
+            image: AssetsManager.svgAvatar3,
           ),
         ),
         const SizedBox(height: 8),

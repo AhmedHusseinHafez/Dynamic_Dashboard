@@ -27,10 +27,12 @@ class DrawerItem extends StatelessWidget {
       tileColor: ColorManager.white,
       titleTextStyle: isActive
           ? StyleManager.getBoldStyle(
+              context,
               fontSize: FontSize.s16,
               color: ColorManager.primary,
             )
           : StyleManager.getRegularStyle(
+              context,
               fontSize: FontSize.s16,
             ),
       trailing: isActive

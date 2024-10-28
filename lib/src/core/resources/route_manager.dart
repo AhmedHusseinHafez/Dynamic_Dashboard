@@ -2,7 +2,8 @@ import 'package:espresso_dynamic_screen/src/features/dashboard/presentation/view
 import 'package:flutter/material.dart';
 
 class Routes {
-  static const String dashboardScreen = '/dashboardScreen';
+  // if you change this to "/dashboard" flutter will but default route in stack first then navigate to dashboard screen
+  static const String dashboardScreen = '/';
 }
 
 class RouteGenerator {

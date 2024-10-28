@@ -15,6 +15,7 @@ class QuickInvoiceHeader extends StatelessWidget {
       Text(
         StringsManager.quickInvoice,
         style: StyleManager.getMediumStyle(
+          context,
           fontSize: FontSize.s20,
         ),
       ),

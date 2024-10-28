@@ -15,12 +15,18 @@ class TransactionHistoryHeader extends StatelessWidget {
         Text(
           StringsManager.transactionHistory,
           style: StyleManager.getMediumStyle(
+            context,
             fontSize: FontSize.s20,
           ),
         ),
         const Spacer(),
         TextButton(
           onPressed: () {},
+          style: ButtonStyle(
+            textStyle: WidgetStatePropertyAll<TextStyle>(
+              StyleManager.getLightStyle(context, fontSize: FontSize.s16),
+            ),
+          ),
           child: Text(StringsManager.seeAll),
         ),
       ],

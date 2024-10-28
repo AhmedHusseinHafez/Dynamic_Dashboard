@@ -43,6 +43,7 @@ class _LastSectionState extends State<LastSection> {
           Text(
             StringsManager.myCard,
             style: StyleManager.getMediumStyle(
+              context,
               fontSize: FontSize.s20,
             ),
           ),
@@ -56,6 +57,7 @@ class _LastSectionState extends State<LastSection> {
           Text(
             "13 April 2022",
             style: StyleManager.getLightStyle(
+              context,
               fontSize: FontSize.s16,
               color: ColorManager.gray,
             ),

@@ -28,21 +28,7 @@ class FontSize {
   static const FontSize _instance = FontSize._internal(); // singleton
   factory FontSize() => _instance;
 
-  static double s5 = 5;
-
-  static double s7 = 7;
-
-  static double s8 = 8;
-
-  static double s9 = 9;
-
-  static double s10 = 10;
-
-  static double s11 = 11;
-
   static double s12 = 12;
-
-  static double s13 = 13;
 
   static double s14 = 14;
 
@@ -57,20 +43,12 @@ class FontSize {
   static double s22 = 22;
 
   static double s24 = 24;
-  static double s25 = 25;
-
-  static double s30 = 30;
-
-  static double s35 = 35;
 
   static double s36 = 36;
-
-  static double s40 = 40;
 
   static double s45 = 45;
   static double s48 = 48;
 
-  static double s50 = 50;
   static double s57 = 57;
 
   static double s60 = 60;

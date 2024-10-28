@@ -60,7 +60,7 @@ class _CustomPageViewState extends State<CustomPageView> {
           const SizedBox(height: 19),
           DotsIndicator(
             dotsCount: titles.length,
-            position: currentPage.toInt(),
+            position: currentPage.round(),
             decorator: DotsDecorator(
               size: const Size.square(9.0),
               activeSize: const Size(32, 8),
