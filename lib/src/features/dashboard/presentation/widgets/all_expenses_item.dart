@@ -39,30 +39,42 @@ class AllExpensesItem extends StatelessWidget {
             _arrowForward(),
           ]),
           const SizedBox(height: 34),
-          Text(
-            model.title,
-            style: StyleManager.getRegularStyle(
-              context,
-              color: isSelected ? ColorManager.white : null,
-              fontSize: FontSize.s16,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              model.title,
+              style: StyleManager.getRegularStyle(
+                context,
+                color: isSelected ? ColorManager.white : null,
+                fontSize: FontSize.s16,
+              ),
             ),
           ),
           const SizedBox(height: 8),
-          Text(
-            model.date,
-            style: StyleManager.getLightStyle(
-              context,
-              color: isSelected ? ColorManager.whiteSmoke : ColorManager.gray,
-              fontSize: FontSize.s14,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              model.date,
+              style: StyleManager.getLightStyle(
+                context,
+                color: isSelected ? ColorManager.whiteSmoke : ColorManager.gray,
+                fontSize: FontSize.s14,
+              ),
             ),
           ),
           const SizedBox(height: 16),
-          Text(
-            model.price,
-            style: StyleManager.getMediumStyle(
-              context,
-              color: isSelected ? ColorManager.white : ColorManager.primary,
-              fontSize: FontSize.s24,
+          FittedBox(
+            alignment: AlignmentDirectional.centerStart,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              model.price,
+              style: StyleManager.getMediumStyle(
+                context,
+                color: isSelected ? ColorManager.white : ColorManager.primary,
+                fontSize: FontSize.s24,
+              ),
             ),
           ),
         ],
@@ -85,22 +97,32 @@ class AllExpensesItem extends StatelessWidget {
     );
   }
 
-  Container _customCircle() {
-    return Container(
-      width: 60,
-      height: 60,
-      padding: const EdgeInsets.all(14),
-      decoration: ShapeDecoration(
-        color: isSelected
-            ? Colors.white.withOpacity(0.2)
-            : ColorManager.whiteSmoke,
-        shape: const OvalBorder(),
-      ),
-      child: SvgPicture.asset(
-        model.image,
-        colorFilter: ColorFilter.mode(
-          isSelected ? ColorManager.white : ColorManager.primary,
-          BlendMode.srcIn,
+  Widget _customCircle() {
+    return Flexible(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 60, maxHeight: 60),
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Container(
+            width: 60,
+            height: 60,
+            // padding: const EdgeInsets.all(14),
+            decoration: ShapeDecoration(
+              color: isSelected
+                  ? Colors.white.withOpacity(0.2)
+                  : ColorManager.whiteSmoke,
+              shape: const OvalBorder(),
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                model.image,
+                colorFilter: ColorFilter.mode(
+                  isSelected ? ColorManager.white : ColorManager.primary,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

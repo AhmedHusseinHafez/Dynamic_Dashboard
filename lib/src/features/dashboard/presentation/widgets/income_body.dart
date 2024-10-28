@@ -26,7 +26,7 @@ class InComeBody extends StatelessWidget {
                     const Expanded(
                       child: DetailedIncomeChart(),
                     ),
-                    const SizedBox(width: 48),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: _categories(),
                     )
