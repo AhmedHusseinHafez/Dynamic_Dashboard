@@ -14,7 +14,7 @@ Future<void> main() async {
   initGetIt();
 
   Future.wait([
-    windowManager.ensureInitialized()
+    // windowManager.ensureInitialized()
 
     // MyLocalization.load(const Locale.fromSubtags(languageCode: 'ar')),
     // SystemChrome.setPreferredOrientations([
@@ -25,10 +25,10 @@ Future<void> main() async {
     if (kDebugMode) {
       Bloc.observer = AppObserver();
     }
-    windowManager.setMinimumSize(const Size(500, 1000.0)); // Minimum breakpoint
+    // windowManager.setMinimumSize(const Size(500, 1000.0)); // Minimum breakpoint
     runApp(
       DevicePreview(
-        // enabled: false,
+        enabled: false,
         builder: (context) => MyApp(),
       ),
     );

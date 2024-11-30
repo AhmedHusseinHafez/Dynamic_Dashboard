@@ -34,14 +34,7 @@ class CustomListTileModel {
         title: StringsManager.myInvestments,
         image: AssetsManager.svgMyInvestments,
       ),
-      CustomListTileModel(
-        title: StringsManager.settingSystem,
-        image: AssetsManager.svgSettings,
-      ),
-      CustomListTileModel(
-        title: StringsManager.logoutAccount,
-        image: AssetsManager.svgLogout,
-      ),
+    
     ];
   }
 

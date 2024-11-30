@@ -23,7 +23,7 @@ class DrawerItem extends StatelessWidget {
       onTap: onTap,
       leading: SvgPicture.asset(model.image),
       shape: const RoundedRectangleBorder(),
-      title: Text(model.title),
+      title: FittedBox(alignment: AlignmentDirectional.centerStart, fit: BoxFit.scaleDown, child: Text(model.title)),
       tileColor: ColorManager.white,
       titleTextStyle: isActive
           ? StyleManager.getBoldStyle(
